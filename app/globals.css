@@ -1,0 +1,49 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Categories section scrollbar styling */
+
+.categories-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: theme(colors.gray.700) transparent;
+}
+
+.categories-scrollbar:hover {
+  scrollbar-color: rgba(255, 255, 255, 0.1) transparent;
+}
+
+.categories-scrollbar::-webkit-scrollbar,
+.categories-scrollbar::-webkit-scrollbar-thumb {
+  @apply w-4 rounded-lg border-4 border-solid border-transparent bg-transparent bg-clip-padding;
+}
+
+.categories-scrollbar:hover::-webkit-scrollbar-thumb {
+  @apply bg-white/10;
+}
+
+/* Gallery container and items */
+
+.gallery-container {
+  @apply @container;
+  @apply grid-cols-[repeat(auto-fill,minmax(18rem,1fr))];
+}
+
+.gallery-container > div {
+  @apply relative overflow-hidden flex h-80 items-center justify-center border border-white bg-white/10 text-lg transition-all;
+  @apply after:pointer-events-none after:invisible after:absolute after:left-0 after:top-0 after:h-full after:w-full after:transition-all;
+  @apply hover:after:visible hover:after:bg-primary-950/25;
+}
+
+.gallery-container > div:hover img {
+  @apply scale-105;
+}
+
+.gallery-container > div.span-2 {
+  @apply @[36rem]:col-span-2;
+}
+
+.gallery-container > div.span-3 {
+  @apply col-span-full;
+  @apply @[54rem]:col-span-3;
+}

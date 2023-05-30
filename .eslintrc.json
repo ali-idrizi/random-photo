@@ -1,0 +1,12 @@
+{
+  "extends": [
+    "next/core-web-vitals",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:prettier/recommended"
+  ],
+  "rules": {
+    "@typescript-eslint/no-explicit-any": 2,
+    "@typescript-eslint/explicit-module-boundary-types": ["error"],
+    "react/no-unescaped-entities": 0
+  }
+}
